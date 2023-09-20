@@ -1,24 +1,27 @@
-var alertedCat = false;
-var alerted = false;
+alert ('Meoww Meow!');
+alert('Tranlation: Welcome to our home!');
 
-function welcomeMessage (alertedCat) {
-     if (alertedCat === false) {
-       alert ('Meoww Meow!')
-        alertedCat = true;
-     //   return alert('Meoww Meow!');
-   }
-   else if (alertedCat === true){
-        alertedCat = false
-   }
-}
+//var alertedCat = false;
+//var alerted = false;
 
-function translation (alerted) {
-    if (alerted === false) {
-      
-       alerted = true;
-       return alert('Tranlation: Welcome to our home!');
-  }
-}
+//function welcomeMessage (alertedCat) {
+//     if (alertedCat === false) {
+//       alert ('Meoww Meow!');
+//        alertedCat = true;
+     
+//   }
+//   else if (alertedCat === true){
+//        alertedCat = false;
+//   }
+//}
+
+//function translation (alerted) {
+//    if (alerted === false) {
+//      
+//       alerted = true;
+//       return alert('Tranlation: Welcome to our home!');
+//  }
+//}
 
 //<script type="text/javascript">
 //    var alerted = localStorage.getItem('alerted') || '';
