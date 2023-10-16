@@ -30,3 +30,22 @@ alert('Tranlation: Welcome to our home!');
 //     localStorage.setItem('alerted','yes');
 //    }
 //</script>
+
+
+//info pannel toggle
+//=====================================================
+document.querySelector('.btn').addEventListener("click", () => {
+    document.querySelector(".toggle-container").classList.toggle("Mance-open")
+});
+
+document.querySelector('.btn').addEventListener("click", () => {
+    document.querySelector(".toggle-container").classList.toggle("Slayer-open")
+});
+
+document.querySelector('.btn').addEventListener("click", () => {
+    document.querySelector(".toggle-container").classList.toggle("Walter-open")
+});
+
+document.querySelector('.btn').addEventListener("click", () => {
+    document.querySelector(".toggle-container").classList.toggle("HM-open")
+});

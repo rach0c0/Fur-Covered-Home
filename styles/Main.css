@@ -37,6 +37,8 @@ body {
     flex-wrap: wrap;
     column-gap: 3%;
     margin-left: 50px;
+    /*z-index: 1;
+    position: absolute;*/
 }
 
 .intro-container {
@@ -92,48 +94,7 @@ body {
     margin: 0px;
 }
 
-/* links & buttons 
-=========================================================*/
- .btn, .btn:visited {
-    display: inline-flex;
-    color: black;
-    font-weight: 700;
-    font-size: 140%;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 23px;
-    background-color: white;
-    border: 10px;
-    border-color: white;
-    padding: 10px 30px 10px 30px;
-    margin-bottom: 20px;
-}
-
-.btn:hover, .btn:focus, .btn:active {
-    background: white;
-    color: #1b1b27;
-    border: solid #a1a3a3;
-}
-
-.aswr, .aswr:visited {
-    display:flex;
-    align-items:space-between;
-    justify-content:center;
-    flex-wrap: wrap;
-    color: black;
-    border-radius: 23px;
-    background-color: white;
-    border: 10px;
-    border-color: white;
-}
-
-.aswr:hover, .aswr:focus, .aswr:active .aswr.selected {
-    background: white;
-    color: #1b1b27;
-    border: solid #a1a3a3;
-}
-
- .port {
+.port {
     display: inline-flex;
     color: black;
     font-weight: 700;
@@ -152,6 +113,144 @@ body {
     background: white;
     color: #1b1b27;
     border: solid rgb(95, 94, 94);
+}
+
+/* nav pannel
+=========================================================*/
+ .btn, .btn:visited {
+    display: inline-flex;
+    color: black;
+    font-weight: 700;
+    font-size: 140%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 23px 23px 15px 0px;
+    background-color: white;
+    border: solid;
+    border-bottom: 0px;
+    border-color: #a1a3a3;
+    padding: 10px 30px 10px 30px;
+    flex-shrink: 0;
+}
+
+.info-pannel{
+    display: flex;
+    background: white;
+    color: #1b1b27;
+    border: solid #a1a3a3;
+    border-radius: 0px 23px 23px 23px;
+    z-index: 1;
+    position: absolute;
+    width: 25%;
+}
+
+.Mance-open .Slayer-open .Walter-open .HM-open .info-pannel{
+    display: none;
+}
+
+.Mance-open .Slayer-open .Walter-open .HM-open .btn {
+    background: white;
+    color: #1b1b27;
+    border: solid;
+    border-color: white;
+    border-radius: 23px;
+}
+ .Mance-open .Slayer-open .Walter-open .HM-open .btn:hover, .btn:focus .btn:active {
+    background: white;
+    color: #1b1b27;
+    border: solid #a1a3a3;
+}
+
+/*.Slayer-open .info-pannel{
+    display: none;
+}
+
+.Slayer-open .btn {
+    background: white;
+    color: #1b1b27;
+    border: solid;
+    border-color: white;
+    border-radius: 23px;
+}
+ .Slayer-open .btn:hover, .btn:focus .btn:active {
+    background: white;
+    color: #1b1b27;
+    border: solid #a1a3a3;
+}
+
+.Walter-open .info-pannel{
+    display: none;
+}
+
+.Walter-open .btn {
+    background: white;
+    color: #1b1b27;
+    border: solid;
+    border-color: white;
+    border-radius: 23px;
+}
+ .Walter-open .btn:hover, .btn:focus .btn:active {
+    background: white;
+    color: #1b1b27;
+    border: solid #a1a3a3;
+}
+
+.HM-open .info-pannel{
+    display: none;
+}
+
+.HM-open .btn {
+    background: white;
+    color: #1b1b27;
+    border: solid;
+    border-color: white;
+    border-radius: 23px;
+}
+ .HM-open .btn:hover, .btn:focus .btn:active {
+    background: white;
+    color: #1b1b27;
+    border: solid #a1a3a3;*/
+}
+
+.quiz-link .quiz-link:visited {
+    display: inline;
+    color: black;
+    font-weight: 700;
+    font-size: 140%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 23px;
+    background-color: white;
+    border: solid;
+    border-color: white;
+    padding: 10px 30px 10px 30px;
+}
+
+ .quiz-link:hover, .quiz-link:focus .quiz-link:active {
+    background: white;
+    color: #1b1b27;
+    border: solid #a1a3a3;
+}
+
+
+/* quizlette
+=======================================================*/
+.aswr, .aswr:visited {
+    display:flex;
+    align-items:space-between;
+    justify-content:center;
+    flex-wrap: wrap;
+    color: black;
+    border-radius: 23px;
+    background-color: white;
+    border: 10px;
+    border-color: white;
+}
+
+.aswr:hover, .aswr:focus, .aswr:active .aswr.selected {
+    background: white;
+    color: #1b1b27;
+    border: solid #a1a3a3;
 }
 
 .hide {

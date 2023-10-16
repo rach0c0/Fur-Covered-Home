@@ -8,6 +8,74 @@
 //find mode of collected data
 
 //use an if, else if, else loop to determine result based on found mode
+
+ //print name, picture, and breif description based on result
+
+
+const backButton = document.getElementById('back-btn')
+const questionContainerElement = document.getElementById('question-container')
+const questionElement = document.getElementById('question')
+const answerButtonsElement = document.getElementById('aswr-btn')
+
+//let shuffledQuestions, currentQuestionIndex
+
+answerButtonsElement.addEventListener('click', selectAnswer, () => {
+    currentQuestionIndex++
+    setNextQuestion()
+  } )
+
+  backButton.addEventListener('click', () => {
+    currentQuestonIndex--
+    setNextQuestion()
+  } )
+
+
+function answerSelected() {
+  currentQuestionIndex = 0
+  questionContainerElement.classList.remove('hide')
+  setNextQuestion()
+    }
+
+function setNextQuestion() {
+    resetState()
+    showQuestion(currentQuestionIndex)
+    }
+
+function showQuestion(question) {
+  questionElement.innerText = question.question
+  question.answers.forEach(answer => {
+    const button = document.createElement('button')
+    button.innerText = answer.innerText
+    button.classList.add('btn')
+    button.dataset.aswr = answer.aswr
+    button.addEventListener('click' , selectAnswer)
+    answerButtonsElement.appendChild(button)
+  })
+}
+
+function resetState() {
+  clearStatusClass(document.body)
+  backButton.classList.add('hide')
+  while (answerButtonsElement.fisrtChild) {
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+  }
+}
+
+function SelectAnswer(e) {
+  const selectedButton = e.target
+  const aswr = selectedButton.dataset.aswr
+  setStatusClass(document.body, aswr)
+  Array.from(answerButtonsElement.children).forEach(button => {
+    setStatusClass(button, button.dataset.correct)
+  } )
+  if ( ________ > currentQuestionIndex + 1) {
+
+  } else {
+    
+  }
+}
+
+function findResults() {
 /*if mode = 1{
     return Slayer
 }
@@ -20,37 +88,9 @@
     else mode = 4{
         return You are not a cat(Axl)
     }*/
-
- //print name, picture, and breif description based on result
-
-
-const backButton = document.getElementById('back-btn')
-const questionContainerElement = document.getElementById('question-container')
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('aswr-btn')
-
-let shuffledQuestions, currentQuestionIndex
-
-answerButtonsElement.addEventListener('click', selectAnswer, () => {
-    currentQuestionIndex++
-    setNextQuestion()
-  })
-
-
-function answerSelected() {
-
     }
 
-function setNextQuestion() {
-    resetState()
-    showQuestion(shuffledQuestions[currentQuestionIndex])
-    }
-
-function findResults() {
-
-    }
-
-
+//print name, picture, and breif description based on result
 
 const questions = [
     {
