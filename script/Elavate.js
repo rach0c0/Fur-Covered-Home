@@ -34,18 +34,18 @@ alert('Tranlation: Welcome to our home!');
 
 //info pannel toggle
 //=====================================================
-document.querySelector('.btn').addEventListener("click", () => {
-    document.querySelector(".toggle-container").classList.toggle("Mance-open")
+document.querySelector('.btn-m').addEventListener("click", () => {
+    document.querySelector(".toggle-m-container").classList.toggle("Mance-open")
 });
 
-document.querySelector('.btn').addEventListener("click", () => {
-    document.querySelector(".toggle-container").classList.toggle("Slayer-open")
+document.querySelector('.btn-s').addEventListener("click", () => {
+    document.querySelector(".toggle-s-container").classList.toggle("Slayer-open")
 });
 
-document.querySelector('.btn').addEventListener("click", () => {
-    document.querySelector(".toggle-container").classList.toggle("Walter-open")
+document.querySelector('.btn-w').addEventListener("click", () => {
+    document.querySelector(".toggle-w-container").classList.toggle("Walter-open")
 });
 
-document.querySelector('.btn').addEventListener("click", () => {
-    document.querySelector(".toggle-container").classList.toggle("HM-open")
+document.querySelector('.btn-hm').addEventListener("click", () => {
+    document.querySelector(".toggle-hm-container").classList.toggle("HM-open")
 });
