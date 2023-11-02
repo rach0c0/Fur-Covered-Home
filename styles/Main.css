@@ -158,7 +158,7 @@ body {
     width: 25%;
 }
 
- .btn-m:hover, .btn-s:hover, .btn-w:hover, .btn-hm:hover, .quiz-link:hover, .quiz-link:focus {
+ .btn-m:hover, .btn-s:hover, .btn-w:hover, .btn-hm:hover, .quiz-link:hover, .quiz-link:focus, .btn-m:focus, .btn-s:focus, .btn-w:focus, .btn-hm:focus {
     background: white;
     color: #1b1b27;
     border: solid #a1a3a3;
@@ -167,20 +167,8 @@ body {
 }
 
 .btn-m:visited, .btn-s:visited, .btn-w:visited, .btn-hm:visited, .btn-m:active, .btn-s:active, .btn-w:active, .btn-hm:active {
-    display: inline;
-    color: black;
-    font-weight: 700;
-    font-size: 140%;
-    text-align: center;
-    text-decoration: none;
     border-radius: 23px 23px 15px 0px;
-    background-color: white;
-    border: solid;
-    border-bottom: 0px;
-    border-color: #a1a3a3;
-    padding: 10px 30px 10px 30px;
-    margin-bottom:0px;
-    flex-shrink: 0;
+    margin-bottom: 0px;
 
 }
 
@@ -199,7 +187,7 @@ body {
     border-color: white;
 }
 
-.aswr:hover, .aswr:focus, .aswr:active .aswr.selected {
+.aswr:hover, .aswr:focus, .aswr:active {
     background: white;
     color: #1b1b27;
     border: solid #a1a3a3;
