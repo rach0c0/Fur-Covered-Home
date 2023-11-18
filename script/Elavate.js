@@ -31,6 +31,15 @@ alert('Tranlation: Welcome to our home!');
 //    }
 //</script>
 
+//cat fact top banner
+const placeHolder = document.getElementById("generateFact");
+
+const getFact = fetch("https://catfact.ninja/fact")
+    getFact.then((response) => response.json())
+    .then((json) => placeHolder.innerHTML = json.fact);
+
+
+
 
 //info pannel toggle
 //=====================================================
