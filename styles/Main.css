@@ -133,9 +133,9 @@ header {
     border: solid rgb(95, 94, 94);
 }
 
-/* nav pannel
+/* about pannel
 =========================================================*/
- .btn-m, .btn-s, .btn-w, .btn-hm, .quiz-link, .quiz-link:visited, .quiz-link:active {
+ .btn-m, .btn-s, .btn-w, .btn-hm, .WCayQ, .WCayQ:visited, .WCayQ:active {
     display: inline;
     color: black;
     font-weight: 700;
@@ -169,6 +169,7 @@ header {
 
 .info-pannel{
     display: flex;
+    flex-direction: column;
     background: white;
     color: #1b1b27;
     border: solid #a1a3a3;
@@ -176,9 +177,10 @@ header {
     z-index: 1;
     position: absolute;
     width: 25%;
+    padding-bottom: 5px;
 }
 
- .btn-m:hover, .btn-s:hover, .btn-w:hover, .btn-hm:hover, .quiz-link:hover, .quiz-link:focus, .btn-m:focus, .btn-s:focus, .btn-w:focus, .btn-hm:focus {
+ .btn-m:hover, .btn-s:hover, .btn-w:hover, .btn-hm:hover, .WCayQ:hover, .WCayQ:focus, .btn-m:focus, .btn-s:focus, .btn-w:focus, .btn-hm:focus {
     background: white;
     color: #1b1b27;
     border: solid #a1a3a3;
@@ -192,22 +194,44 @@ header {
 
 }
 
+.info, .info-img {
+    padding: 1px 5px 1px 10px;
+}
+
+.info-img {
+    display:flex;
+    max-width: 70%;
+    padding-left: 15%;
+}
+
 
 /* quizlette
 =======================================================*/
-.aswr, .aswr:visited {
-    display:flex;
+.quiz-link {
+    text-decoration: none;
+    color: black;
+}
+
+.mc-img {
+    border-radius: 21px;
+}
+
+.aswr-btn, .aswr-btn:visited {
+   /* display:flex;
     align-items:space-between;
     justify-content:center;
-    flex-wrap: wrap;
+    flex-wrap: wrap;*/
     color: black;
     border-radius: 23px;
     background-color: white;
     border: 10px;
     border-color: white;
+    width:fit-content;
+    height: fit-content;
+    padding: 5px;
 }
 
-.aswr:hover, .aswr:focus, .aswr:active {
+.aswr-btn:hover, .aswr-btn:focus, .aswr-btn:active {
     background: white;
     color: #1b1b27;
     border: solid #a1a3a3;

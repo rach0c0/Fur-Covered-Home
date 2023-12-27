@@ -17,6 +17,8 @@ const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('aswr-btn')
 
+const storedAnswers = ['0', '0', '0', '0', '0']
+
 //let shuffledQuestions, currentQuestionIndex
 
 answerButtonsElement.addEventListener('click', selectAnswer, () => {
@@ -96,46 +98,46 @@ const questions = [
     {
      question: 'To get attention you...?',
       answers: [
-        { Image: '', /*correct: true*/ },  //swing from chandalier(slayer)
-        { Image: '', /*correct: false*/ }, //speak directly(Mance)
-        { Image: '', /*correct: false*/ }, //sit directly on target(Walter)
-        { Image: '', /*correct: false*/ }  //poke and nudge target(Axl)
+        { Image: './quiz-imgs/cat-swinging', /*correct: true*/ },  //swing from chandalier(slayer)
+        { Image: './quiz-imgs/cat-speaking-directly', /*correct: false*/ }, //speak directly(Mance)
+        { Image: './quiz-imgs/cat-sitting-on-target', /*correct: false*/ }, //sit directly on target(Walter)
+        { Image: './quiz-imgs/cat-nudging-target', /*correct: false*/ }  //poke and nudge target(Axl)
       ]
     },
     {
         question: 'How would you rather spend your day?',
          answers: [
-           { Image: '', /*correct: true*/ },  //staying in your happy little bubble(Slayer)
-           { Image: '', /*correct: false*/ }, //Making sure others are taken care of(Mance)
-           { Image: '', /*correct: false*/ }, //lounging around receiving cuddles(Walter)
-           { Image: '', /*correct: false*/ }  //playing games/doing activities(Axl)
+           { Image: './quiz-imgs/cat-in-own-bubble', /*correct: true*/ },  //staying in your happy little bubble(Slayer)
+           { Image: './quiz-imgs/cat-taking-care-of-others', /*correct: false*/ }, //Making sure others are taken care of(Mance)
+           { Image: './quiz-imgs/cat-lounging-cuddling', /*correct: false*/ }, //lounging around receiving cuddles(Walter)
+           { Image: './quiz-imgs/cat-playing-games', /*correct: false*/ }  //playing games/doing activities(Axl)
          ]
        },
        {
         question: 'You identify as an...?',
          answers: [
-           { Image: '', /*correct: true*/ },  //introvert(Slayer)
-           { Image: '', /*correct: false*/ }, //extrovert(Walter)
-           { Image: '', /*correct: false*/ }, //ambiavert(Mance)
-           { Image: '', /*correct: false*/ }  //omnivert(Axl)
+           { Image: './quiz-imgs/cat-introvert', /*correct: true*/ },  //introvert(Slayer)
+           { Image: './quiz-imgs/cat-extrovert', /*correct: false*/ }, //extrovert(Walter)
+           { Image: './quiz-imgs/cat-ambiavert', /*correct: false*/ }, //ambiavert(Mance)
+           { Image: './quiz-imgs/cat-omnivert', /*correct: false*/ }  //omnivert(Axl)
          ]
        },
        {
         question: 'What is your love language?',
          answers: [
-           { Image: '', /*correct: true*/ },  //Acts of Service(Slayer)
-           { Image: '', /*correct: false*/ }, //giving/receiving gifts(Mance)
-           { Image: '', /*correct: false*/ }, //pysical touch(walter)
-           { Image: '', /*correct: false*/ }  //quality time/words of affrimation(Axl)
+           { Image: './quiz-imgs/cat-act-of-service', /*correct: true*/ },  //Acts of Service(Slayer)
+           { Image: './quiz-imgs/cat-giving-gifts', /*correct: false*/ }, //giving/receiving gifts(Mance)
+           { Image: './quiz-imgs/cat-physical-touch', /*correct: false*/ }, //pysical touch(walter)
+           { Image: './quiz-imgs/cat-quality-time', /*correct: false*/ }  //quality time/words of affrimation(Axl)
          ]
        },
        {
         question: 'What is your favorite genre of music?',
          answers: [
-           { Image: '', /*correct: true*/ },  //rock/punk/metal(Slayer)
-           { Image: '', /*correct: false*/ }, //classical/instrumental/jazz(Mance)
-           { Image: '', /*correct: false*/ }, //R&B/Hip Hop/Pop(Walter)
-           { Image: '', /*correct: false*/ }  //country(Axl)
+           { Image: './quiz-imgs/punk-rock-cat', /*correct: true*/ },  //rock/punk/metal(Slayer)
+           { Image: './quiz-imgs/classic-music-cat', /*correct: false*/ }, //classical/instrumental/jazz(Mance)
+           { Image: './quiz-imgs/rnb-rap-cat', /*correct: false*/ }, //R&B/Hip Hop/Pop(Walter)
+           { Image: './quiz-imgs/country-cat', /*correct: false*/ }  //country(Axl)
          ]
        }
                    
