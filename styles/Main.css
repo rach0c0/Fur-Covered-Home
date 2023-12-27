@@ -71,6 +71,16 @@ header {
     Margin-left: 20px;
 }
 
+.gallery {
+    display: flex;
+    justify-content: center;
+}
+
+.intro-img {
+    max-width: 33%;
+    padding: 0% 1% 
+}
+
 .quiz-container{
     background-color: white;
     text-align: center;
