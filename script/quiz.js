@@ -12,56 +12,66 @@
  //print name, picture, and breif description based on result
 
 
-const backButton = document.getElementById('back-btn')
+//const backButton = document.getElementById('back-btn')
 const questionContainerElement = document.getElementById('question-container')
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('aswr-btn')
+const questionElement = document.querySelector('question')
+const answerButtonsElement = document.querySelector('aswr-btn')
+const answerElement = document.querySelector('aswr')
 
-const storedAnswers = ['0', '0', '0', '0', '0']
+const storedAnswers = ['0', '0', '0', '0', '0', '0']
 
 //let shuffledQuestions, currentQuestionIndex
+let currentQuestionIndex
 
-answerButtonsElement.addEventListener('click', selectAnswer, () => {
+answerButtonsElement.addEventListener('click' () => {
     currentQuestionIndex++
     setNextQuestion()
   } )
 
-  backButton.addEventListener('click', () => {
-    currentQuestonIndex--
-    setNextQuestion()
-  } )
+//  backButton.addEventListener('click', () => {
+//    currentQuestonIndex--
+//    setNextQuestion()
+//  } )
 
 
 function answerSelected() {
-  currentQuestionIndex = 0
+  currentQuestionIndex = currentQuestionIndex++
   questionContainerElement.classList.remove('hide')
   setNextQuestion()
     }
 
+//function startGame() {
+  //startButton.classList.add('hide')
+  //shuffledQuestions = questions.sort(() => Math.random() - .5)
+//  currentQuestionIndex = 0
+//  questionContainerElement.classList.remove('hide')
+//  setNextQuestion()
+//}
+
 function setNextQuestion() {
-    resetState()
+   // resetState()
     showQuestion(currentQuestionIndex)
     }
 
 function showQuestion(question) {
   questionElement.innerText = question.question
-  question.answers.forEach(answer => {
+  question.answers.forEach(answers => {
     const button = document.createElement('button')
-    button.innerText = answer.innerText
-    button.classList.add('btn')
-    button.dataset.aswr = answer.aswr
+    button.innerText = answers.innerText
+    //button.classList.add('btn')
+    button.dataset.aswr = answers.aswr
     button.addEventListener('click' , selectAnswer)
     answerButtonsElement.appendChild(button)
   })
 }
 
-function resetState() {
-  clearStatusClass(document.body)
-  backButton.classList.add('hide')
-  while (answerButtonsElement.fisrtChild) {
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-  }
-}
+//function resetState() {
+//  clearStatusClass(document.body)
+//  backButton.classList.add('hide')
+//  while (answerButtonsElement.fisrtChild) {
+//    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+//  }
+//}
 
 function SelectAnswer(e) {
   const selectedButton = e.target
@@ -98,46 +108,46 @@ const questions = [
     {
      question: 'To get attention you...?',
       answers: [
-        { Image: './quiz-imgs/cat-swinging', /*correct: true*/ },  //swing from chandalier(slayer)
-        { Image: './quiz-imgs/cat-speaking-directly', /*correct: false*/ }, //speak directly(Mance)
-        { Image: './quiz-imgs/cat-sitting-on-target', /*correct: false*/ }, //sit directly on target(Walter)
-        { Image: './quiz-imgs/cat-nudging-target', /*correct: false*/ }  //poke and nudge target(Axl)
+        { Image1: './quiz-imgs/cat-swinging', /*correct: true*/ },  //swing from chandalier(slayer)
+        { Image2: './quiz-imgs/cat-speaking-directly', /*correct: false*/ }, //speak directly(Mance)
+        { Image3: './quiz-imgs/cat-sitting-on-target', /*correct: false*/ }, //sit directly on target(Walter)
+        { Image4: './quiz-imgs/cat-nudging-target', /*correct: false*/ }  //poke and nudge target(Axl)
       ]
     },
     {
         question: 'How would you rather spend your day?',
          answers: [
-           { Image: './quiz-imgs/cat-in-own-bubble', /*correct: true*/ },  //staying in your happy little bubble(Slayer)
-           { Image: './quiz-imgs/cat-taking-care-of-others', /*correct: false*/ }, //Making sure others are taken care of(Mance)
-           { Image: './quiz-imgs/cat-lounging-cuddling', /*correct: false*/ }, //lounging around receiving cuddles(Walter)
-           { Image: './quiz-imgs/cat-playing-games', /*correct: false*/ }  //playing games/doing activities(Axl)
+           { Image1: './quiz-imgs/cat-in-own-bubble', /*correct: true*/ },  //staying in your happy little bubble(Slayer)
+           { Image2: './quiz-imgs/cat-taking-care-of-others', /*correct: false*/ }, //Making sure others are taken care of(Mance)
+           { Image3: './quiz-imgs/cat-lounging-cuddling', /*correct: false*/ }, //lounging around receiving cuddles(Walter)
+           { Image4: './quiz-imgs/cat-playing-games', /*correct: false*/ }  //playing games/doing activities(Axl)
          ]
        },
        {
         question: 'You identify as an...?',
          answers: [
-           { Image: './quiz-imgs/cat-introvert', /*correct: true*/ },  //introvert(Slayer)
-           { Image: './quiz-imgs/cat-extrovert', /*correct: false*/ }, //extrovert(Walter)
-           { Image: './quiz-imgs/cat-ambiavert', /*correct: false*/ }, //ambiavert(Mance)
-           { Image: './quiz-imgs/cat-omnivert', /*correct: false*/ }  //omnivert(Axl)
+           { Image1: './quiz-imgs/cat-introvert', /*correct: true*/ },  //introvert(Slayer)
+           { Image2: './quiz-imgs/cat-extrovert', /*correct: false*/ }, //extrovert(Walter)
+           { Image3: './quiz-imgs/cat-ambiavert', /*correct: false*/ }, //ambiavert(Mance)
+           { Image4: './quiz-imgs/cat-omnivert', /*correct: false*/ }  //omnivert(Axl)
          ]
        },
        {
         question: 'What is your love language?',
          answers: [
-           { Image: './quiz-imgs/cat-act-of-service', /*correct: true*/ },  //Acts of Service(Slayer)
-           { Image: './quiz-imgs/cat-giving-gifts', /*correct: false*/ }, //giving/receiving gifts(Mance)
-           { Image: './quiz-imgs/cat-physical-touch', /*correct: false*/ }, //pysical touch(walter)
-           { Image: './quiz-imgs/cat-quality-time', /*correct: false*/ }  //quality time/words of affrimation(Axl)
+           { Image1: './quiz-imgs/cat-act-of-service', /*correct: true*/ },  //Acts of Service(Slayer)
+           { Image2: './quiz-imgs/cat-giving-gifts', /*correct: false*/ }, //giving/receiving gifts(Mance)
+           { Image3: './quiz-imgs/cat-physical-touch', /*correct: false*/ }, //pysical touch(walter)
+           { Image4: './quiz-imgs/cat-quality-time', /*correct: false*/ }  //quality time/words of affrimation(Axl)
          ]
        },
        {
         question: 'What is your favorite genre of music?',
          answers: [
-           { Image: './quiz-imgs/punk-rock-cat', /*correct: true*/ },  //rock/punk/metal(Slayer)
-           { Image: './quiz-imgs/classic-music-cat', /*correct: false*/ }, //classical/instrumental/jazz(Mance)
-           { Image: './quiz-imgs/rnb-rap-cat', /*correct: false*/ }, //R&B/Hip Hop/Pop(Walter)
-           { Image: './quiz-imgs/country-cat', /*correct: false*/ }  //country(Axl)
+           { Image1: './quiz-imgs/punk-rock-cat', /*correct: true*/ },  //rock/punk/metal(Slayer)
+           { Image2: './quiz-imgs/classic-music-cat', /*correct: false*/ }, //classical/instrumental/jazz(Mance)
+           { Image3: './quiz-imgs/rnb-rap-cat', /*correct: false*/ }, //R&B/Hip Hop/Pop(Walter)
+           { Image4: './quiz-imgs/country-cat', /*correct: false*/ }  //country(Axl)
          ]
        }
                    
