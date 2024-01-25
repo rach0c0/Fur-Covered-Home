@@ -1,32 +1,64 @@
+//identify elements to change per click/answer selection
+const questionElement = document.querySelector('.question'); //identify queston element
+const imageElement = document.querySelector('.Image'); //identify visual answer elements
+const answerElement = document.querySelector('.text'); //identify writtern answer element
 
-//create functions to cycle through questions once one is answered
-
-
-//build a set or map to collect and store data from answers
-//findResults.map(answersArray[1,2,3,4,5,6])
-
-
-
-
-const questionElement = document.getElementById('question');
-const imageElement = document.querySelector('mc-img');
-const answerElement = document.querySelector('aswr');
-
-const userAnswers = ['0', '0', '0', '0', '0', '0']; //creating answer index
+const userAnswers = ['0', '0', '0', '0', '0', '0']; //create answer index
 
 let currentQuestionIndex = 0; //keeps track of users place in quiz
 let quizActive = true; //true until last question is answered
 let storedAnswers = userAnswers; //Holds answers relating to user selection
 
-document.querySelector('aswr-btn').addEventListener('click', () => {
+//========================Navigation upon user interaction==================================
+document.querySelector('.aswr-container1').addEventListener("click", () => {
+//  console.log("this is my answer") //test
   currentQuestionIndex++;
-  if (currentQuestionIndex >= 6) {
-    showQuestion(currentQuestionIndex);
-  }    else {
-      showResult(userAnswers);
+//  console.log(currentQuestionIndex) //test
+    if (currentQuestionIndex <= 5) {
+      showQuestion(currentQuestionIndex);
+}    else {
+          console.log("Done") //test
+//      //showResult(userAnswers);
     } 
-} );
+});
 
+document.querySelector('.aswr-container2').addEventListener("click", () => {
+//  console.log("this is my answer") //test
+  currentQuestionIndex++;
+//  console.log(currentQuestionIndex) //test
+    if (currentQuestionIndex <= 5) {
+      showQuestion(currentQuestionIndex);
+}    else {
+      console.log("Done") //test
+//      //showResult(userAnswers);
+} 
+});
+
+document.querySelector('.aswr-container3').addEventListener("click", () => {
+//  console.log("this is my answer") //test
+  currentQuestionIndex++;
+//  console.log(currentQuestionIndex) //test
+    if (currentQuestionIndex <= 5) {
+      showQuestion(currentQuestionIndex);
+}    else {
+      console.log("Done") //test
+//      //showResult(userAnswers);
+} 
+});
+
+document.querySelector('.aswr-container4').addEventListener("click", () => {
+//  console.log("this is my answer") //test
+  currentQuestionIndex++;
+//  console.log(currentQuestionIndex) //test
+    if (currentQuestionIndex <= 5) {
+      showQuestion(currentQuestionIndex);
+}    else {
+      console.log("Done") //test
+//      //showResult(userAnswers);
+} 
+});
+
+//==============================Innerworkings?====================================
 //function setNextQuestion() {
   //  resetState()
 //    showQuestion(currentQuestionIndex)
@@ -39,13 +71,16 @@ document.querySelector('aswr-btn').addEventListener('click', () => {
 //  }
 //};
 
-function showQuestion(question) {
+function showQuestion(quizContent) {
   questionElement.innerHTML = question.question
   question.answers.forEach(answers => {
     answerElement.innerHTML = answers.text
     imageElement.innerHTML = answers.Image
   })
 };
+
+//build a set or map to collect and store data from answers
+//findResults.map(answersArray[1,2,3,4,5,6])
 
 //find mode of collected data
 
