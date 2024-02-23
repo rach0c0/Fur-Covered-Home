@@ -11,51 +11,51 @@ let storedAnswers = userAnswers; //Holds answers relating to user selection
 
 //========================Navigation upon user interaction==================================
 document.querySelector('.aswr-container1').addEventListener("click", () => {
-//  console.log("this is my answer") //test
-  currentQuestionIndex++;
 //  console.log(currentQuestionIndex) //test
     if (currentQuestionIndex <= 5) {
-      showQuestion(currentQuestionIndex);
+      showQuestion();
+      console.log('1');
+      currentQuestionIndex++;
 }    else {
-          console.log("Done") //test
-//      //showResult(userAnswers);
-    } 
+          console.log("Done"); //test
+      //showResult(userAnswers);
+    }
 });
 
 document.querySelector('.aswr-container2').addEventListener("click", () => {
-//  console.log("this is my answer") //test
-  currentQuestionIndex++;
 //  console.log(currentQuestionIndex) //test
     if (currentQuestionIndex <= 5) {
-      showQuestion(currentQuestionIndex);
+      showQuestion();
+      console.log('2');
+      currentQuestionIndex++;
 }    else {
-      console.log("Done") //test
-//      //showResult(userAnswers);
-} 
+      console.log("Done"); //test
+      //showResult(userAnswers);
+  }
 });
 
 document.querySelector('.aswr-container3').addEventListener("click", () => {
-//  console.log("this is my answer") //test
-  currentQuestionIndex++;
 //  console.log(currentQuestionIndex) //test
     if (currentQuestionIndex <= 5) {
-      showQuestion(currentQuestionIndex);
+      showQuestion();
+      console.log('3');
+      currentQuestionIndex++;
 }    else {
-      console.log("Done") //test
-//      //showResult(userAnswers);
-} 
+      console.log("Done"); //test
+      //showResult(userAnswers);
+  }
 });
 
 document.querySelector('.aswr-container4').addEventListener("click", () => {
-//  console.log("this is my answer") //test
-  currentQuestionIndex++;
 //  console.log(currentQuestionIndex) //test
     if (currentQuestionIndex <= 5) {
-      showQuestion(currentQuestionIndex);
+      showQuestion();
+      console.log('4');
+      currentQuestionIndex++;
 }    else {
-      console.log("Done") //test
-//      //showResult(userAnswers);
-} 
+      console.log("Done"); //test
+      //showResult(userAnswers);
+  }
 });
 
 //==============================Innerworkings?====================================
@@ -71,12 +71,12 @@ document.querySelector('.aswr-container4').addEventListener("click", () => {
 //  }
 //};
 
-function showQuestion(quizContent) {
-  questionElement.innerHTML = question.question
-  question.answers.forEach(answers => {
+function showQuestion() {
+  questionElement.innerHTML = quizContent[currentQuestionIndex].question;
+  quizContent[currentQuestionIndex].answers.forEach(answers => {
     answerElement.innerHTML = answers.text
-    imageElement.innerHTML = answers.Image
-  })
+    imageElement.setAttribute('src', answers.Image);
+  });
 };
 
 //build a set or map to collect and store data from answers
@@ -107,7 +107,7 @@ function showResult(){
 
 };
 
-//-----------------Questions & Answer blocks------------------------------------------------
+//-----------------Questions & Answer blocks-----------------------------------------------
 
 const quizContent = [
     {
@@ -117,35 +117,35 @@ const quizContent = [
         { Image: './quiz-imgs/cat-speaking-directly', text: 'Speak directly' }, //(Mance)
         { Image: './quiz-imgs/cat-sitting-on-target', text: 'Sit directly on target' }, //(Walter)
         { Image: './quiz-imgs/cat-nudging-target', text: 'Poke and nudge target' }, //(Axl)
-      ]
-    },
+      ]},
+      
     {
-        question: 'How would you rather spend your day?',
-         answers: [
-           { Image: './quiz-imgs/cat-in-own-bubble', text: 'Staying in your happy little bubble' }, //(Slayer)
-           { Image: './quiz-imgs/cat-taking-care-of-others', text: 'Making sure others are taken care of' }, //(Mance)
-           { Image: './quiz-imgs/cat-lounging-cuddling', text: 'Lounging around receiving cuddles' }, //(Walter)
-           { Image: './quiz-imgs/cat-playing-games', text: 'Playing games/doing activities' }, //(Axl)
-         ]
-       },
-       {
-        question: 'You identify as an...?',
-         answers: [
-           { Image: './quiz-imgs/cat-introvert', text: 'Introvert' }, //(Slayer)
-           { Image: './quiz-imgs/cat-extrovert', text: 'Extrovert' }, //(Walter)
-           { Image: './quiz-imgs/cat-ambiavert', text: 'Ambiavert' }, //(Mance)
-           { Image: './quiz-imgs/cat-omnivert', text: 'Omnivert' }, //(Axl)
-         ]
-       },
-       {
-        question: 'What is your love language?',
-         answers: [
-           { Image: './quiz-imgs/cat-act-of-service', text: 'Acts of service' }, //(Slayer)
-           { Image: './quiz-imgs/cat-giving-gifts', text: 'Giving/Receiving gifts' }, //(Mance)
-           { Image: './quiz-imgs/cat-physical-touch', text: 'Pysical touch' }, //(walter)
-           { Image: './quiz-imgs/cat-quality-time', text: 'Quality time/Words of affrimation' }, //(Axl)
-         ]
-       },
+      question: 'How would you rather spend your day?',
+        answers: [
+          { Image: './quiz-imgs/cat-in-own-bubble', text: 'Staying in your happy little bubble' }, //(Slayer)
+         { Image: './quiz-imgs/cat-taking-care-of-others', text: 'Making sure others are taken care of' }, //(Mance)
+         { Image: './quiz-imgs/cat-lounging-cuddling', text: 'Lounging around receiving cuddles' }, //(Walter)
+         { Image: './quiz-imgs/cat-playing-games', text: 'Playing games/doing activities' }, //(Axl)
+       ]},
+
+    {
+      question: 'You identify as an...?',
+       answers: [
+         { Image: './quiz-imgs/cat-introvert', text: 'Introvert' }, //(Slayer)
+         { Image: './quiz-imgs/cat-extrovert', text: 'Extrovert' }, //(Walter)
+         { Image: './quiz-imgs/cat-ambiavert', text: 'Ambiavert' }, //(Mance)
+         { Image: './quiz-imgs/cat-omnivert', text: 'Omnivert' }, //(Axl)
+       ]},
+
+    {
+      question: 'What is your love language?',
+       answers: [
+         { Image: './quiz-imgs/cat-act-of-service', text: 'Acts of service' }, //(Slayer)
+         { Image: './quiz-imgs/cat-giving-gifts', text: 'Giving/Receiving gifts' }, //(Mance)
+         { Image: './quiz-imgs/cat-physical-touch', text: 'Pysical touch' }, //(walter)
+         { Image: './quiz-imgs/cat-quality-time', text: 'Quality time/Words of affrimation' }, //(Axl)
+       ]},
+
        {
         question: 'What is your favorite genre of music?',
          answers: [
@@ -153,7 +153,6 @@ const quizContent = [
            { Image: './quiz-imgs/classic-music-cat', text: 'Classical/Instrumental/Jazz' }, //(Mance)
            { Image: './quiz-imgs/rnb-rap-cat', text: 'R&B/Hiphop/Pop' }, //(Walter)
            { Image: './quiz-imgs/country-cat', text: 'Country' }, //(Axl)
-         ]
-       }
+         ]}
                    
   ];
