@@ -12,7 +12,7 @@ let storedAnswers = userAnswers; //Holds answers relating to user selection
 //========================Navigation upon user interaction==================================
 document.querySelector('.aswr-container1').addEventListener("click", () => {
 //  console.log(currentQuestionIndex) //test
-    if (currentQuestionIndex <= 5) {
+    if (currentQuestionIndex <= 4) {
       showQuestion();
       console.log('1');
       currentQuestionIndex++;
@@ -24,7 +24,7 @@ document.querySelector('.aswr-container1').addEventListener("click", () => {
 
 document.querySelector('.aswr-container2').addEventListener("click", () => {
 //  console.log(currentQuestionIndex) //test
-    if (currentQuestionIndex <= 5) {
+    if (currentQuestionIndex <= 4) {
       showQuestion();
       console.log('2');
       currentQuestionIndex++;
@@ -36,7 +36,7 @@ document.querySelector('.aswr-container2').addEventListener("click", () => {
 
 document.querySelector('.aswr-container3').addEventListener("click", () => {
 //  console.log(currentQuestionIndex) //test
-    if (currentQuestionIndex <= 5) {
+    if (currentQuestionIndex <= 4) {
       showQuestion();
       console.log('3');
       currentQuestionIndex++;
@@ -48,7 +48,7 @@ document.querySelector('.aswr-container3').addEventListener("click", () => {
 
 document.querySelector('.aswr-container4').addEventListener("click", () => {
 //  console.log(currentQuestionIndex) //test
-    if (currentQuestionIndex <= 5) {
+    if (currentQuestionIndex <= 4) {
       showQuestion();
       console.log('4');
       currentQuestionIndex++;
@@ -113,46 +113,46 @@ const quizContent = [
     {
      question: 'To get attention you...?',
       answers: [
-        { Image: './quiz-imgs/cat-swinging', text: 'Swing from chandalier' }, //(slayer)
-        { Image: './quiz-imgs/cat-speaking-directly', text: 'Speak directly' }, //(Mance)
-        { Image: './quiz-imgs/cat-sitting-on-target', text: 'Sit directly on target' }, //(Walter)
-        { Image: './quiz-imgs/cat-nudging-target', text: 'Poke and nudge target' }, //(Axl)
+        { Image: 'quiz-imgs/cat-swinging.jpg', text: 'Swing from chandalier' }, //(slayer)
+        { Image: 'quiz-imgs/cat-speaking-directly.jpg', text: 'Speak directly' }, //(Mance)
+        { Image: 'quiz-imgs/cat-sitting-on-target.jpg', text: 'Sit directly on target' }, //(Walter)
+        { Image: 'quiz-imgs/cat-nudging-target.jpg', text: 'Poke and nudge target' } //(Axl)
       ]},
       
     {
       question: 'How would you rather spend your day?',
         answers: [
-          { Image: './quiz-imgs/cat-in-own-bubble', text: 'Staying in your happy little bubble' }, //(Slayer)
-         { Image: './quiz-imgs/cat-taking-care-of-others', text: 'Making sure others are taken care of' }, //(Mance)
-         { Image: './quiz-imgs/cat-lounging-cuddling', text: 'Lounging around receiving cuddles' }, //(Walter)
-         { Image: './quiz-imgs/cat-playing-games', text: 'Playing games/doing activities' }, //(Axl)
+          { Image: 'quiz-imgs/cat-in-own-bubble.jpg', text: 'Staying in your happy little bubble' }, //(Slayer)
+         { Image: 'quiz-imgs/cat-taking-care-of-others.jpg', text: 'Making sure others are taken care of' }, //(Mance)
+         { Image: 'quiz-imgs/cat-lounging-cuddling.jpg', text: 'Lounging around receiving cuddles' }, //(Walter)
+         { Image: 'quiz-imgs/cat-playing-games.jpg', text: 'Playing games/doing activities' } //(Axl)
        ]},
 
     {
       question: 'You identify as an...?',
        answers: [
-         { Image: './quiz-imgs/cat-introvert', text: 'Introvert' }, //(Slayer)
-         { Image: './quiz-imgs/cat-extrovert', text: 'Extrovert' }, //(Walter)
-         { Image: './quiz-imgs/cat-ambiavert', text: 'Ambiavert' }, //(Mance)
-         { Image: './quiz-imgs/cat-omnivert', text: 'Omnivert' }, //(Axl)
+         { Image: 'quiz-imgs/cat-introvert.jpg', text: 'Introvert' }, //(Slayer)
+         { Image: 'quiz-imgs/cat-extrovert.jpg', text: 'Extrovert' }, //(Walter)
+         { Image: 'quiz-imgs/cat-ambiavert.jpg', text: 'Ambiavert' }, //(Mance)
+         { Image: 'quiz-imgs/cat-omnivert.jpg', text: 'Omnivert' } //(Axl)
        ]},
 
     {
       question: 'What is your love language?',
        answers: [
-         { Image: './quiz-imgs/cat-act-of-service', text: 'Acts of service' }, //(Slayer)
-         { Image: './quiz-imgs/cat-giving-gifts', text: 'Giving/Receiving gifts' }, //(Mance)
-         { Image: './quiz-imgs/cat-physical-touch', text: 'Pysical touch' }, //(walter)
-         { Image: './quiz-imgs/cat-quality-time', text: 'Quality time/Words of affrimation' }, //(Axl)
+         { Image: 'quiz-imgs/cat-act-of-service.jpg', text: 'Acts of service' }, //(Slayer)
+         { Image: 'quiz-imgs/cat-giving-gifts.jpg', text: 'Giving/Receiving gifts' }, //(Mance)
+         { Image: 'quiz-imgs/cat-physical-touch.jpg', text: 'Pysical touch' }, //(walter)
+         { Image: 'quiz-imgs/cat-quality-time.jpg', text: 'Quality time/Words of affrimation' } //(Axl)
        ]},
 
        {
         question: 'What is your favorite genre of music?',
          answers: [
-           { Image: './quiz-imgs/punk-rock-cat', text: 'Rock/Punk/Metal' }, //(Slayer)
-           { Image: './quiz-imgs/classic-music-cat', text: 'Classical/Instrumental/Jazz' }, //(Mance)
-           { Image: './quiz-imgs/rnb-rap-cat', text: 'R&B/Hiphop/Pop' }, //(Walter)
-           { Image: './quiz-imgs/country-cat', text: 'Country' }, //(Axl)
+           { Image: 'quiz-imgs/punk-rock-cat.jpg', text: 'Rock/Punk/Metal' }, //(Slayer)
+           { Image: 'quiz-imgs/classic-music-cat.jpg', text: 'Classical/Instrumental/Jazz' }, //(Mance)
+           { Image: 'quiz-imgs/rnb-rap-cat.jpg', text: 'R&B/Hiphop/Pop' }, //(Walter)
+           { Image: 'quiz-imgs/country-cat.jpg', text: 'Country' } //(Axl)
          ]}
                    
   ];
