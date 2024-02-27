@@ -9,7 +9,7 @@ Web application featuring an interactive, reveal-to-discover way of providing in
 </ul>
 
 <h3>To Demo:</h3>
-https://65de46e9016f6a36a97536ce--fur-covered-home.netlify.app/
+https://fur-covered-home.netlify.app/
 
 <h4>completed goals</h4>
 <ul>
