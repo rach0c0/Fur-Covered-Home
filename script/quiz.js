@@ -3,7 +3,7 @@ const questionElement = document.querySelector('.question'); //identify queston 
 const imageElement = [...document.querySelectorAll('.Image')]; //identify visual answer elements
 const answerElement = [...document.querySelectorAll('.text')]; //identify writtern answer element
 
-const userAnswers = ['0', '0', '0', '0', '0', '0']; //create answer index
+const userAnswers = [0, 0, 0, 0, 0]; //create answer index
 
 let currentQuestionIndex = 0; //keeps track of users place in quiz
 let quizActive = true; //true until last question is answered
@@ -14,11 +14,12 @@ document.querySelector('.aswr-container1').addEventListener("click", () => {
 //  console.log(currentQuestionIndex) //test
     if (currentQuestionIndex <= 4) {
       showQuestion();
-      console.log('1');
+      console.log('1'); //test
+      storedAnswers[currentQuestionIndex] = 1;
       currentQuestionIndex++;
 }    else {
-          console.log("Done"); //test
-      //showResult(userAnswers);
+          console.log(`done: ${storedAnswers}`); //test
+      findResult(storedAnswers);
     }
 });
 
@@ -26,11 +27,12 @@ document.querySelector('.aswr-container2').addEventListener("click", () => {
 //  console.log(currentQuestionIndex) //test
     if (currentQuestionIndex <= 4) {
       showQuestion();
-      console.log('2');
+      console.log('2'); //test
+      storedAnswers[currentQuestionIndex] = 2;
       currentQuestionIndex++;
 }    else {
-      console.log("Done"); //test
-      //showResult(userAnswers);
+      console.log(`done: ${storedAnswers}`); //test
+      findResult(storedAnswers);
   }
 });
 
@@ -38,11 +40,12 @@ document.querySelector('.aswr-container3').addEventListener("click", () => {
 //  console.log(currentQuestionIndex) //test
     if (currentQuestionIndex <= 4) {
       showQuestion();
-      console.log('3');
+      console.log('3'); //test
+      storedAnswers[currentQuestionIndex] = 3;
       currentQuestionIndex++;
 }    else {
-      console.log("Done"); //test
-      //showResult(userAnswers);
+      console.log(`done: ${storedAnswers}`); //test
+      findResult(storedAnswers);
   }
 });
 
@@ -50,73 +53,71 @@ document.querySelector('.aswr-container4').addEventListener("click", () => {
 //  console.log(currentQuestionIndex) //test
     if (currentQuestionIndex <= 4) {
       showQuestion();
-      console.log('4');
+      console.log('4'); //test
+      storedAnswers[currentQuestionIndex] = 4;
       currentQuestionIndex++;
 }    else {
-      console.log("Done"); //test
-      //showResult(userAnswers);
+      console.log(`done: ${storedAnswers}`); //test
+      findResult(storedAnswers);
   }
 });
 
 //==============================Innerworkings?====================================
-//function setNextQuestion() {
-  //  resetState()
-//    showQuestion(currentQuestionIndex)
-//    };
-
-//function resetState() {
-//  clearStatusClass(document.body)
-//  while (answerButtonsElement.fisrtChild) {
-//    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-//  }
-//};
-
 function showQuestion() {
   questionElement.innerHTML = quizContent[currentQuestionIndex].question;
-  let aswrIndex = 0;
+  let textIndex = 0;
+  let imgIndex = 0;
   answerElement.forEach(answerElement => {
-    answerElement.innerHTML = quizContent[currentQuestionIndex].answers[aswrIndex].text;
-    aswrIndex++;
-  });
-/*  quizContent[currentQuestionIndex].answers.forEach(answers => {
-    answerElement.innerHTML = answers.text
-    imageElement.setAttribute('src', answers.Image);
-  }); */
+    answerElement.innerHTML = quizContent[currentQuestionIndex].answers[textIndex].text;
+    textIndex++
+  }); 
  imageElement.forEach(imageElement => {
-   console.log(quizContent[currentQuestionIndex].answers.Image);
-  //  imageElement.src = quizContent[currentQuestionIndex].answers[aswrIndex].Image;
-  //  imageElement.setAttribute('src', quizContent[currentQuestionIndex].answers[aswrIndex].Image);
-  //  aswrIndex++
+      imageElement.setAttribute('src', quizContent[currentQuestionIndex].answers[imgIndex].Image);
+  imgIndex++
   }); 
     
 };
 
-//build a set or map to collect and store data from answers
-//findResults.map(answersArray[1,2,3,4,5,6])
+function findResult(aswrs) {
+//  let aString = result.toString();
+  const mode = a => 
+  Object.values(
+    a.reduce((count, e) => {
+      if (!(e in count)) {
+        count[e] = [0, e];
+      }
+      
+      count[e][0]++;
+      return count;
+    }, {})
+  ).reduce((a, v) => v[0] < a[0] ? a : v, [0, null])[1];
+;
+const result = mode([...aswrs]);
+let cat = 'This is your cat';
 
-//find mode of collected data
-
-//use an if, else if, else loop to determine result based on found mode
-
-function findResults() {
-/*if mode = 1{
-    return Slayer
-}
-    else if mode = 2{
-        return Mance
-    }
-    else if mode = 3{
-        return Walter
-    }
-    else mode = 4{
-        return You are not a cat(Axl)
-    }*/
+if (result === 1) {
+    cat = 'Slayer';
+} else if (result === 2) {
+        cat = 'Mance';
+    } else if (result === 3) {
+        cat = 'Walter';
+    } else if (result === 4) {
+        cat = 'You are not a cat(Axl)';
     };
+
+    console.log(cat);
+  };
+
 
 //print name, picture, and breif description based on result
 
-function showResult(){
+function resetState() {
+//create a function that resets quiz without having to refres web page
 
+//  clearStatusClass(document.body)
+//  while (answerButtonsElement.fisrtChild) {
+//    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+//  }
 };
 
 //-----------------Questions & Answer blocks-----------------------------------------------
@@ -145,7 +146,7 @@ const quizContent = [
        answers: [
          { Image: 'quiz-imgs/cat-introvert.jpg', text: 'Introvert' }, //(Slayer)
          { Image: 'quiz-imgs/cat-extrovert.jpg', text: 'Extrovert' }, //(Walter)
-         { Image: 'quiz-imgs/cat-ambiavert.jpg', text: 'Ambiavert' }, //(Mance)
+         { Image: 'quiz-imgs/cat-ambiavert.png', text: 'Ambiavert' }, //(Mance)
          { Image: 'quiz-imgs/cat-omnivert.jpg', text: 'Omnivert' } //(Axl)
        ]},
 
