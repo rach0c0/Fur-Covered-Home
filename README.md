@@ -8,7 +8,8 @@ Web application featuring an interactive, reveal-to-discover way of providing in
 <h3>To Demo:</h3>
 **please either clone or download zip copy and then use Live Server or a local server to run the application.**
 
-<h4>current goals</h4>
+<h4>active goals</h4>
 <li>have pop out menu items auto close when another is selected</li>
 <li>have alert welcoming user recognize when a user has already been alerted</li>
-
+<li>create a button to reset quiz without having to refresh the page</li>
+<li>improve re-sizability</li>
