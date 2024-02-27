@@ -1,7 +1,7 @@
 //identify elements to change per click/answer selection
 const questionElement = document.querySelector('.question'); //identify queston element
-const imageElement = document.querySelector('.Image'); //identify visual answer elements
-const answerElement = document.querySelector('.text'); //identify writtern answer element
+const imageElement = [...document.querySelectorAll('.Image')]; //identify visual answer elements
+const answerElement = [...document.querySelectorAll('.text')]; //identify writtern answer element
 
 const userAnswers = ['0', '0', '0', '0', '0', '0']; //create answer index
 
@@ -73,10 +73,22 @@ document.querySelector('.aswr-container4').addEventListener("click", () => {
 
 function showQuestion() {
   questionElement.innerHTML = quizContent[currentQuestionIndex].question;
-  quizContent[currentQuestionIndex].answers.forEach(answers => {
+  let aswrIndex = 0;
+  answerElement.forEach(answerElement => {
+    answerElement.innerHTML = quizContent[currentQuestionIndex].answers[aswrIndex].text;
+    aswrIndex++;
+  });
+/*  quizContent[currentQuestionIndex].answers.forEach(answers => {
     answerElement.innerHTML = answers.text
     imageElement.setAttribute('src', answers.Image);
-  });
+  }); */
+ imageElement.forEach(imageElement => {
+   console.log(quizContent[currentQuestionIndex].answers.Image);
+  //  imageElement.src = quizContent[currentQuestionIndex].answers[aswrIndex].Image;
+  //  imageElement.setAttribute('src', quizContent[currentQuestionIndex].answers[aswrIndex].Image);
+  //  aswrIndex++
+  }); 
+    
 };
 
 //build a set or map to collect and store data from answers
@@ -122,7 +134,7 @@ const quizContent = [
     {
       question: 'How would you rather spend your day?',
         answers: [
-          { Image: 'quiz-imgs/cat-in-own-bubble.jpg', text: 'Staying in your happy little bubble' }, //(Slayer)
+         { Image: 'quiz-imgs/cat-in-own-bubble.jpg', text: 'Staying in your happy little bubble' }, //(Slayer)
          { Image: 'quiz-imgs/cat-taking-care-of-others.jpg', text: 'Making sure others are taken care of' }, //(Mance)
          { Image: 'quiz-imgs/cat-lounging-cuddling.jpg', text: 'Lounging around receiving cuddles' }, //(Walter)
          { Image: 'quiz-imgs/cat-playing-games.jpg', text: 'Playing games/doing activities' } //(Axl)
