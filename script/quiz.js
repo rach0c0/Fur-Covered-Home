@@ -2,6 +2,7 @@
 const questionElement = document.querySelector('.question'); //identify queston element
 const imageElement = [...document.querySelectorAll('.Image')]; //identify visual answer elements
 const answerElement = [...document.querySelectorAll('.text')]; //identify writtern answer element
+const buttonElement =[...document.querySelectorAll('.aswr-btn')]; 
 
 const userAnswers = [0, 0, 0, 0, 0]; //create answer index
 
@@ -14,11 +15,11 @@ document.querySelector('.aswr-container1').addEventListener("click", () => {
 //  console.log(currentQuestionIndex) //test
     if (currentQuestionIndex <= 4) {
       showQuestion();
-      console.log('1'); //test
+//      console.log('1'); //test
       storedAnswers[currentQuestionIndex] = 1;
       currentQuestionIndex++;
 }    else {
-          console.log(`done: ${storedAnswers}`); //test
+//          console.log(`done: ${storedAnswers}`); //test
       findResult(storedAnswers);
     }
 });
@@ -27,11 +28,11 @@ document.querySelector('.aswr-container2').addEventListener("click", () => {
 //  console.log(currentQuestionIndex) //test
     if (currentQuestionIndex <= 4) {
       showQuestion();
-      console.log('2'); //test
+//      console.log('2'); //test
       storedAnswers[currentQuestionIndex] = 2;
       currentQuestionIndex++;
 }    else {
-      console.log(`done: ${storedAnswers}`); //test
+//      console.log(`done: ${storedAnswers}`); //test
       findResult(storedAnswers);
   }
 });
@@ -40,11 +41,11 @@ document.querySelector('.aswr-container3').addEventListener("click", () => {
 //  console.log(currentQuestionIndex) //test
     if (currentQuestionIndex <= 4) {
       showQuestion();
-      console.log('3'); //test
+//      console.log('3'); //test
       storedAnswers[currentQuestionIndex] = 3;
       currentQuestionIndex++;
 }    else {
-      console.log(`done: ${storedAnswers}`); //test
+//      console.log(`done: ${storedAnswers}`); //test
       findResult(storedAnswers);
   }
 });
@@ -53,11 +54,11 @@ document.querySelector('.aswr-container4').addEventListener("click", () => {
 //  console.log(currentQuestionIndex) //test
     if (currentQuestionIndex <= 4) {
       showQuestion();
-      console.log('4'); //test
+//      console.log('4'); //test
       storedAnswers[currentQuestionIndex] = 4;
       currentQuestionIndex++;
 }    else {
-      console.log(`done: ${storedAnswers}`); //test
+//      console.log(`done: ${storedAnswers}`); //test
       findResult(storedAnswers);
   }
 });
@@ -102,14 +103,31 @@ if (result === 1) {
     } else if (result === 3) {
         cat = 'Walter';
     } else if (result === 4) {
-        cat = 'You are not a cat(Axl)';
+        cat = 'Axl';
     };
 
-    console.log(cat);
+//    console.log(cat); //test
+    showResult(cat); 
   };
 
+function showResult(result) {
+  questionElement.innerHTML =`${result}!`;
+  //hide all parts of quiz
+  document.querySelector(".aswr-grid").classList.toggle("hide");
+  buttonElement.forEach(buttonElement => {
+    buttonElement.classList.toggle("hide") });
+  imageElement.forEach(imageElement => {
+    imageElement.classList.toggle("hide") });
+  answerElement.forEach(answerElement => {
+    answerElement.classList.toggle("hide") });
+  //reveal result
+  document.querySelector(".result-grid").classList.toggle("hide");
+  document.querySelector(".catImage").classList.toggle("hide");
+  document.querySelector(".description").classList.toggle("hide");
 
-//print name, picture, and breif description based on result
+  document.querySelector('.catImage').setAttribute('src', `quiz-imgs/${result}.jpg`);
+  document.querySelector('.description').innerHTML = `You are most like ${result}!`;
+};
 
 function resetState() {
 //create a function that resets quiz without having to refres web page

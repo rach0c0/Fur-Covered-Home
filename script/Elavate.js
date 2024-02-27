@@ -1,5 +1,5 @@
-alert ('Meoww Meow!');
-alert('Tranlation: Welcome to our home!');
+/* alert ('Meoww Meow!');
+alert('Tranlation: Welcome to our home!'); */
 
 //var alertedCat = false;
 //var alerted = false;

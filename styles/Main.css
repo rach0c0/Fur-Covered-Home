@@ -97,7 +97,7 @@ header {
     grid-template-columns: 300px 300px;
     grid-row: auto auto;
     grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-row-gap: 20px; 
 
 }
 
@@ -220,6 +220,7 @@ header {
 }
 
 .Image {
+    min-width: 250px;
     max-width: 250px;
     border-radius: 21px;
 }
@@ -245,8 +246,49 @@ header {
     border: solid #a1a3a3;
 }
 
-.hide {
+ .result-grid .hide {
     display: none;
+}
+
+.catImage .hide {
+    display: none;
+}
+
+.description .hide {
+    display: none;
+} 
+
+/*=====Once quiz is completed=====*/
+.aswr-grid .hide {
+    display: none;
+}
+.aswr-btn .hide {
+    display: none;
+}
+.Image .hide {
+    display: none;
+}
+.text .hide {
+    display: none;
+}
+
+/*===reveal result===*/
+.result-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.catImage {
+    align-self: center;
+    max-width: 460px;
+    border-radius: 21px;
+}
+
+.description {
+    display: inline-flex;
+    font-size: xx-large;
 }
 
 /*mobile styles
